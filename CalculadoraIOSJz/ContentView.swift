@@ -8,30 +8,35 @@
 import SwiftUI
 
 enum CalcButton: String{
-    case uno
-    case dos
-    case tres
-    case cuatro
-    case cinco
-    case seis
-    case siete
-    case ocho
-    case nueve
-    case cero
-    case suma
-    case resta
-    case division
-    case multiplicacion
-    case limpiar
-    case decimal
-    case negativo
-    case porcentaje
+    case uno = "1"
+    case dos = "2"
+    case tres = "3"
+    case cuatro = "4"
+    case cinco = "5"
+    case seis = "6"
+    case siete = "7"
+    case ocho = "8"
+    case nueve = "9"
+    case cero = "0"
+    case suma = "+"
+    case resta = "-"
+    case division = "/"
+    case multiplicacion = "x"
+    case igual = "="
+    case limpiar = "C"
+    case decimal = "."
+    case negativo = "%"
+    case porcentaje = "-/+"
 }
 
 struct ContentView: View {
     
     let buttons: [[CalcButton]] = [
-    [.siete, .ocho, .nueve]
+    [.limpiar, .negativo, .porcentaje ,.division],
+    [.siete, .ocho, .nueve, .multiplicacion],
+    [.cuatro, .cinco, .seis, .resta],
+    [.uno, .dos, .tres],
+    [.cero, .decimal, .igual]
     ]
     
     var body: some View {
@@ -58,6 +63,7 @@ struct ContentView: View {
                                 
                             }, label: {
                                 Text(item.rawValue)
+                                    .font(.system(size: 32))
                                     .frame(width: 70, height: 70)
                                     .background(Color.orange)
                                     .foregroundColor(.white)
